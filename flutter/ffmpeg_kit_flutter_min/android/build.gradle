@@ -13,6 +13,9 @@ rootProject.allprojects {
     repositories {
         google()
         mavenCentral()
+        flatDir {
+            dirs 'libs'
+        }
     }
 }
 
@@ -49,5 +52,5 @@ android {
 
 dependencies {
     implementation 'androidx.annotation:annotation:1.5.0'
-    implementation 'com.arthenica:ffmpeg-kit-min:6.0-2.LTS'
+    compileOnly fileTree(dir: 'libs', include: ['*.aar'])
 }
